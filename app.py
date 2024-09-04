@@ -4,6 +4,7 @@ from PIL import Image
 import io
 import base64
 from pillow_heif import register_heif_opener
+import os
 
 # Register HEIF opener
 register_heif_opener()
@@ -12,6 +13,8 @@ app = Flask(__name__)
 
 # Create a session with a more advanced model
 session = new_session("u2net")
+
+port = int(os.environ.get('PORT', 4000))
 
 @app.route('/', methods=['GET', 'POST'])
 def remove_background():
@@ -462,4 +465,4 @@ def remove_background():
     '''
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
