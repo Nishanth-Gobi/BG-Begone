@@ -40,4 +40,4 @@ sympy==1.13.2
 tifffile==2024.8.30
 tqdm==4.66.5
 urllib3==2.2.2
-Werkzeug==3.0.4
+Werkzeug==3.0.6
